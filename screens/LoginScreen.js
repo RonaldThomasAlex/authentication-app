@@ -22,9 +22,9 @@ function LoginScreen() {
         "Authentication failed",
         "Could not login you in. Try again later"
       );
-    }
 
-    setIsAuthenticating(false);
+      setIsAuthenticating(false);
+    }
   }
 
   if (isAuthenticating) {
