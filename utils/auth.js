@@ -2,15 +2,12 @@ import axios from "axios";
 
 const API_KEY = "AIzaSyAdRndq8m3iZ6fgg3S5boKQTAbr0-9_Gks";
 
-export async function createUser(email, password) {
-  await authenticate("signUp", email, password);
+export function createUser(email, password) {
+  return authenticate("signUp", email, password);
 }
 
-export async function login(email, password) {
-  console.log("email", email);
-  console.log("password", password);
-
-  await authenticate("signInWithPassword", email, password);
+export function login(email, password) {
+  return authenticate("signInWithPassword", email, password);
 }
 
 export async function authenticate(mode, email, password) {
@@ -23,5 +20,7 @@ export async function authenticate(mode, email, password) {
     }
   );
 
-  console.log("response", response.data);
+  const token = response.data.idToken;
+
+  return token;
 }
