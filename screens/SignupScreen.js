@@ -11,7 +11,7 @@ function SignupScreen() {
   async function signupHandler({ email, password }) {
     setIsAuthenticating(true);
 
-    await createUser({ email, password });
+    await createUser(email, password);
 
     setIsAuthenticating(false);
   }
